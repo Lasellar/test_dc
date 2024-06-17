@@ -6,6 +6,7 @@ from models import session as db
 
 
 def create_csv_file(user_id, filename):
+    """Создает и наполняет файл с сообщениями пользователя."""
     messages = db.query(Message).filter_by(user_id=user_id).all()
     with open(filename, 'w', newline='') as file:
         writer = csv.writer(file)
