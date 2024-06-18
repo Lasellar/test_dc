@@ -4,9 +4,11 @@ from logging import basicConfig, INFO
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 from os import getenv
+from dotenv import load_dotenv
 
 from handlers import router
 
+load_dotenv()
 token = getenv('TOKEN')
 
 
